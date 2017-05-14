@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.myController">
+   <children>
+      <Button id="btntest" fx:id="btntest" layoutX="42.0" layoutY="106.0" mnemonicParsing="false" onAction="#selectClick" text="Select a game" />
+      <TextField id="texttest" fx:id="texttest" layoutX="42.0" layoutY="31.0" />
+      <Button layoutX="42.0" layoutY="141.0" mnemonicParsing="false" onAction="#predictClick" text="Predict the winner of the game" />
+      <Button layoutX="42.0" layoutY="176.0" mnemonicParsing="false" onAction="#startClick" text="Start the games" />
+      <Button layoutX="42.0" layoutY="210.0" mnemonicParsing="false" onAction="#resultsClick" text="Display the final results of all games" />
+      <Button layoutX="42.0" layoutY="242.0" mnemonicParsing="false" onAction="#pointsClick" text="Display the points of all athletes" />
+      <Button layoutX="42.0" layoutY="279.0" mnemonicParsing="false" onAction="#exitClick" text="Exit" />
+   </children>
+</AnchorPane>

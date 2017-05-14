@@ -1,0 +1,9 @@
+S1 swimming java.text.SimpleDateFormat@f17b4ca5
+Oz1234 Beck 198.0 0
+Oz1235 Beckr 119.5 0
+Oz1236 Befck1 181.11 0
+Oz1237 Bedck2 197.78 0
+Oz1238 Besck3 173.45 0
+Oz1239 Bewck4 100.19 0
+Oz1240 Berck5 118.75 0
+Oz1241 Beqck6 198.23 0
