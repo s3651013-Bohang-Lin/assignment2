@@ -39,7 +39,7 @@ public class Main extends Application {
 	      statement = connection.createStatement();  
 	      statement.setQueryTimeout(30);  // set timeout to 30 sec.  
 	      statement.executeUpdate("create table if not exists result (GameID string,OfficialID string,AthleteID string,Result double,Score integer)");  
-	      //statement.executeUpdate("delete from result");  
+	      statement.executeUpdate("delete from result");  //delete previous data
 	      
 	    }  
 	    catch(SQLException e)  

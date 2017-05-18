@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scoreController">
    <children>
-      <TableView fx:id="score" prefHeight="360.0" prefWidth="400.0">
+      <TableView fx:id="score" prefHeight="480.0" prefWidth="486.0">
         <columns>
           <TableColumn prefWidth="75.0" text="gameID" />
           <TableColumn prefWidth="75.0" text="athleteID" />
@@ -16,7 +16,7 @@
           <TableColumn prefWidth="75.0" text="scores" />
         </columns>
       </TableView>
-      <Button layoutX="63.0" layoutY="368.0" mnemonicParsing="false" onAction="#backClick" text="Back" />
-      <Button layoutX="260.0" layoutY="368.0" mnemonicParsing="false" onAction="#homeClick" text="Home" />
+      <Button layoutX="62.0" layoutY="490.0" mnemonicParsing="false" onAction="#backClick" text="Back" />
+      <Button layoutX="351.0" layoutY="490.0" mnemonicParsing="false" onAction="#homeClick" text="Home" />
    </children>
 </AnchorPane>
