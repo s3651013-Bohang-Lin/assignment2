@@ -20,6 +20,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+
 public class selectController implements Initializable{
 		@FXML
 		private TextField texttest;

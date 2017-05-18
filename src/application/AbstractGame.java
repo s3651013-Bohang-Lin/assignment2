@@ -12,11 +12,22 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import javafx.application.Application;
 /**
- *Game abstract class provides general behavior and some subclasses to achieve their abstract method
+ * <h1>AbstractGame</h1>
+ * Game abstract class provides general behavior 
+ * and some subclasses to achieve their abstract method
+ * @version jdk1.8
  * @author Bohang Lin s3651013
  *
  */
 public abstract class AbstractGame {
+	/**
+	 * @param gameId String
+	 * @param gameName String
+	 * @param offi Officials
+	 * @param isRun boolean
+	 * @param athletes List<Athletes>
+	 * @param athletsSecondResult Map<String, Double>
+	 * */
 	private String gameId;     //game ID
 	private String gameName;   //game name
 	private Officials offi;	
@@ -62,13 +73,22 @@ public abstract class AbstractGame {
 	}
 	
 	/**
-	 *the method of calculating result cause it is different, need the concrete class to achieve that method 
+	 *the method of calculating result cause it is different, 
+	 *need the concrete class to achieve that method 
+	 *@return Nothing.
 	 */
 	public abstract double compete();
 	
 	/**
 	 * To start the game, you will call a random score to generate the results of each player 
 	 * Save to map for later query use 
+	 * @throws TooFewAthleteException when trying to run a game, which has less than 4 athletes registered.
+	 * @throws NoRefereeException when trying run a game which has no official appointed.
+	 * @throws GameFullException when trying to add an athlete to a game which already has 8 athletes registered
+	 * @throws WrongTypeException when trying to add an athlete to a wrong type of game e.g assigning a swimmer 
+	 * to a running game. Note, super athletes can participate in all three types of games. 
+	 * This exception is also for attempts of assigning an athlete as an official or assigning an official to a game.
+	 *
 	 */
 	public void runGame() throws TooFewAthleteException, NoRefereeException, GameFullException,WrongTypeException{
 		isRun = true;   //Modify the operation flag bit true, said the implementation of the rungame steps
@@ -97,10 +117,12 @@ public abstract class AbstractGame {
 		}
 	}
 	
-	public void saveGameResults()
-{
+	/**
+	 *This method is used to save results in "gameResults.txt"
+	 */
+	public void saveGameResults() {
 		FileWriter out = null;
-		
+
 		try {
 			
 			out = new FileWriter("gameResults.txt",true);
@@ -142,11 +164,8 @@ public abstract class AbstractGame {
 	
 	/**
 	 * Show all the players participating in the game 
-	 * Query results by query map
-	
-	/**
-	 * Show all the players participating in the game 
 	 * Query results by query map 
+	 * @return res
 	 */
 	public String displayAthletsResults(){
 //		if(!isRun){//If you do not select the 3 run the game can not show results

@@ -64,7 +64,7 @@ public class selectPlayersController implements Initializable{
 			temparr=Main.driver.cyclingAths;
 		}
 		for (Athletes object : temparr) {
-			if(object.getCheckbox().isSelected()) //判断是否被选中
+			if(object.getCheckbox().isSelected()) //Determine whether or not you are selected
 			{
 				ath.add(object);
 				//System.out.println(object.getName());
