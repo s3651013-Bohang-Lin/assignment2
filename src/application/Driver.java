@@ -18,12 +18,16 @@ import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 public class Driver {
 	
 	/**
-	 * @param gameId String
-	 * @param gameName String
-	 * @param offi Officials
-	 * @param isRun boolean
-	 * @param athletes List<Athletes>
-	 * @param athletsSecondResult Map<String, Double>
+	 * @param info String
+	 * @param offics ArrayList<Officials>
+	 * @param games List<AbstractGame>
+	 * @param aths ArrayList<Athletes>
+	 * @param swimmingAths ArrayList<Athletes>
+	 * @param runningAths ArrayList<Athletes>
+	 * @param cyclingAths ArrayList<Athletes>
+	 * @param superAths ArrayList<Athletes>
+	 * @param message String
+	 * @param predictWinner Athletes
 	 * */
 	private String info = new String("");
 	public  ArrayList<Officials> offics = new ArrayList<Officials>();
@@ -38,7 +42,7 @@ public class Driver {
 	
 	/**
 	* This method will be executed when user needs to start this system.
-	* It will read information from a text file called "ozlympic.txt" automatically.
+	* It will read information from a text file called "participants.txt" automatically.
 	* Then it will provide a menu so that one can operate the system.
 	*/
 	public void startSystem()
@@ -82,8 +86,10 @@ public class Driver {
 	  private Scanner getKeyboard(){
 	    	return new Scanner(System.in);
 	    }
-	  
-	  //case1��select project and  determine whether to add new players
+	  /**
+	   * case1:select project and determine whether to add new players
+	   */
+	   
 	  public void selectGame()
 	  {
 		  info = "please enter a game you want to run:\n";
@@ -120,50 +126,43 @@ public class Driver {
 		  games.add(game);
 	  }
 	  
-	  /**
-		 * case3:
-		 * Run all races
-		 * Statistical performance of athlete
-		 */
-	  public void runningTheGames() {
-		  System.out.println(" now has "+games.size()+" games");
-		  for(AbstractGame game : games){
-			  List<Athletes> players = new ArrayList<Athletes>();
-			  if(game instanceof Swimming){
-				  players.addAll(swimmingAths);
-			  }
-			  if(game instanceof Running){
-				  players.addAll(runningAths);
-			  }
-			  if(game instanceof Cycling){
-				  players.addAll(cyclingAths);
-			  }
-			  players.addAll(superAths);
-			  game.setAthlets(players);
-			  try{ 
-				  game.runGame();
-				 }catch (TooFewAthleteException e) {
-					// TODO: handle exception
-					 e.printStackTrace();//在命令行打印异常信息在程序中出错的位置及原因
-				}catch (NoRefereeException e) {
-					// TODO: handle exception
-					e.printStackTrace();
-				}
-			  catch (GameFullException e) {
-					//System.err.println("Warning: athletes are more than 8");
-					e.printStackTrace();
-				}
-			  catch (WrongTypeException e) {
-					
-					e.printStackTrace();
-				}
-		  }
-	  }
+	/**
+	 * case3: Run all races Statistical performance of athlete
+	 */
+	public void runningTheGames() {
+		System.out.println(" now has " + games.size() + " games");
+		for (AbstractGame game : games) {
+			List<Athletes> players = new ArrayList<Athletes>();
+			if (game instanceof Swimming) {
+				players.addAll(swimmingAths);
+			}
+			if (game instanceof Running) {
+				players.addAll(runningAths);
+			}
+			if (game instanceof Cycling) {
+				players.addAll(cyclingAths);
+			}
+			players.addAll(superAths);
+			game.setAthlets(players);
+			try {
+				game.runGame();
+			} catch (TooFewAthleteException e) {
+				e.printStackTrace();// print the destination and reason message
+									// of exception on command line
+			} catch (NoRefereeException e) {
+				e.printStackTrace();
+			} catch (GameFullException e) {
+				e.printStackTrace();
+			} catch (WrongTypeException e) {
+
+				e.printStackTrace();
+			}
+		}
+	}
 	  
-	  /**
-	     * case 2:
-	     * predict winner
-	     */
+	/**
+	 * case 2: predict winner
+	 */
 	  public void predictGame(){
 		  String msg = "";
 		  int i = 0;
@@ -181,11 +180,10 @@ public class Driver {
 		  
 	  }
 	  
-	  /**
-		 * case 4:
-		 * Show the results of all athletes
-		 * @return String
-	  */
+	/**
+	 * case 4: Show the results of all athletes
+	 * @return String
+	 */
 	  public String disPlayAllGameResult(){
 		  String res="";
 		  for(AbstractGame game : games){
@@ -194,10 +192,9 @@ public class Driver {
 		  return res;
 	  }
 	  
-	  /**
-		 * case 5:
-		 * Calculated fraction
-		 */
+	/**
+	 * case 5: Calculate fraction and sort the athletes' grades
+	 */
 	  public void calThePlayerScores(){
 		  for(AbstractGame game : games){//Each game can only be scored by the referee statistics
 			  game.getOffi().calScores(game);
@@ -225,100 +222,78 @@ public class Driver {
 			  System.out.println("Sorry! your predict is inCorrect");
 		  }
 	  }
-		  /*
-		  * read athlete data from text
-		 */
-			public void loadPlayers(){
-				
-			  String content = null;
-			  try {
-				  content = FileUtils.readFile("participants.txt");
-				  String[] lines = content.split(";");	
-				  for(String line : lines)
-				  {
-					 String[] values = line.split(", ");
-					  
-					 
-					 Athletes ath = new Athletes();
-					 ath.setAthID(values[0]);
-					 ath.setAthName(values[2]);
-					 ath.setAge(Integer.parseInt(values[3]));
-					 ath.setAthState(values[4]);
-					 ath.setAthType(values[1]);
-					 
-					 if(!"".equals(ath.getAthType()))
-					 {
-						 if("swimmer".equals(ath.getAthType())){
-							 swimmingAths.add(ath);
-						 }
-						 if("cyclist".equals(ath.getAthType())){
-							 cyclingAths.add(ath);
-						 }
-						 if("sprinter".equals(ath.getAthType())){
-							 runningAths.add(ath);
-						 }
-						 if("super".equals(ath.getAthType())){
-							// superAths.add(ath);
-							 swimmingAths.add(ath);
-							 cyclingAths.add(ath);
-							 runningAths.add(ath);
-						 }
-						 if(!"officer".equals(ath.getAthType()))
-							 aths.add(ath);
-					 }	  
-				  }
-				} catch (Exception e) {
-					System.err.println(e.getMessage());
+
+	/**
+	 * loadPlayers method used to read all athletes' information from
+	 * "participants.txt"
+	 */
+	public void loadPlayers() {
+
+		String content = null;
+		try {
+			content = FileUtils.readFile("participants.txt");
+			String[] lines = content.split(";");
+			for (String line : lines) {
+				String[] values = line.split(", ");
+
+				Athletes ath = new Athletes();
+				ath.setAthID(values[0]);
+				ath.setAthType(values[1]);
+				ath.setAthName(values[2]);
+				ath.setAge(Integer.parseInt(values[3]));
+				ath.setAthState(values[4]);
+
+				if (!"".equals(ath.getAthType())) {
+					if ("swimmer".equals(ath.getAthType())) {
+						swimmingAths.add(ath);
+					}
+					if ("cyclist".equals(ath.getAthType())) {
+						cyclingAths.add(ath);
+					}
+					if ("sprinter".equals(ath.getAthType())) {
+						runningAths.add(ath);
+					}
+					if ("super".equals(ath.getAthType())) {
+						// superAths.add(ath);
+						swimmingAths.add(ath);
+						cyclingAths.add(ath);
+						runningAths.add(ath);
+					}
+					if (!"officer".equals(ath.getAthType()))
+						aths.add(ath);
 				}
-				 
-				  
-//				 System.out.println("there are "+aths.size()+" athletes");
-//				 for(Athletes a : aths){
-//					System.out.println(a);
-//				 }
-//				 System.out.println("");
 			}
-			
-			
-			/**
-			 * loading referee
-			 * @throws NoRefereeException when trying run a game which has no official appointed.
-			 */
-			public void loadOffics() throws NoRefereeException{
-				
-				  String content=null;
-				  try {
-					  content = FileUtils.readFile("participants.txt");
-					  String[] lines = content.split(";");	
-					  for(String line : lines){
-						 String[] values = line.split(", ");
-						  
-						 if(("officer".equals(values[1])))
-						 {
-							 Officials offic = new Officials(values[0], values[2], Integer.parseInt(values[3]),
-									 values[4], "");
-							 
-							 offics.add(offic);
-						 }
-						 
-					  }
-					  if(offics.size()==0)
-					  {
-						  throw new NoRefereeException("Warning: There is no officials.");
-					  }
-				} catch (Exception e) {
-					System.err.println(e.getMessage());
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+	}
+
+	/**
+	 * loading referee method used to read all officials' information from
+	 * "participants.txt"
+	 * @throws NoRefereeException
+	 *             when trying run a game which has no official appointed.
+	 */
+	public void loadOffics() throws NoRefereeException {
+
+		String content = null;
+		try {
+			content = FileUtils.readFile("participants.txt");
+			String[] lines = content.split(";");
+			for (String line : lines) {
+				String[] values = line.split(", ");
+
+				if (("officer".equals(values[1]))) {
+					Officials offic = new Officials(values[0], values[2], Integer.parseInt(values[3]), values[4], "");
+
+					offics.add(offic);
 				}
-				  
-				  
-//				 System.out.println("there are "+offics.size()+" officials");
-//				 for(Officials offic : offics){
-//					System.out.println(offic);
-//				 }
-//				 System.out.println("");
 			}
-			public int add(int a,int b)
-			{
-				return a+b;
+			if (offics.size() == 0) {
+				throw new NoRefereeException("Warning: There is no referee.");
 			}
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+	}
 }
