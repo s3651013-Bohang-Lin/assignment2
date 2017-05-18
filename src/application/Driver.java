@@ -11,6 +11,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+
 public class Driver {
 	
 	private String info = new String("");
@@ -18,9 +20,10 @@ public class Driver {
 	public List<AbstractGame> games = new ArrayList<AbstractGame>();
 	private ArrayList<Athletes> aths = new ArrayList<Athletes>();
 	public ArrayList<Athletes> swimmingAths = new ArrayList<Athletes>();
-	private ArrayList<Athletes> runningAths = new ArrayList<Athletes>();
-	private ArrayList<Athletes> cyclingAths = new ArrayList<Athletes>();
+	public ArrayList<Athletes> runningAths = new ArrayList<Athletes>();
+	public ArrayList<Athletes> cyclingAths = new ArrayList<Athletes>();
 	private ArrayList<Athletes> superAths = new ArrayList<Athletes>();
+	public String message = "";
 	private Athletes predictWinner;
 	
 	/**
@@ -127,7 +130,23 @@ public class Driver {
 			  }
 			  players.addAll(superAths);
 			  game.setAthlets(players);
-			  game.runGame();
+			  try{ 
+				  game.runGame();
+				 }catch (TooFewAthleteException e) {
+					// TODO: handle exception
+					 e.printStackTrace();//在命令行打印异常信息在程序中出错的位置及原因
+				}catch (NoRefereeException e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+			  catch (GameFullException e) {
+					//System.err.println("Warning: athletes are more than 8");
+					e.printStackTrace();
+				}
+			  catch (WrongTypeException e) {
+					
+					e.printStackTrace();
+				}
 		  }
 	  }
 	  
@@ -156,17 +175,19 @@ public class Driver {
 		 * case 4:
 		 * Show the results of all athletes
 	  */
-	  public void disPlayAllGameResult(){
+	  public String disPlayAllGameResult(){
+		  String res="";
 		  for(AbstractGame game : games){
-			  game.displayAthletsResults();
+			  res+=game.displayAthletsResults();
 		  }
+		  return res;
 	  }
 	  
 	  /**
 		 * case 5:
 		 * Calculated fraction
 		 */
-	  private void calThePlayerScores(){
+	  public void calThePlayerScores(){
 		  for(AbstractGame game : games){//Each game can only be scored by the referee statistics
 			  game.getOffi().calScores(game);
 		  }
@@ -198,7 +219,9 @@ public class Driver {
 		 */
 			public void loadPlayers(){
 				
-				  String content = FileUtils.readFile("participants.txt");
+			  String content = null;
+			  try {
+				  content = FileUtils.readFile("participants.txt");
 				  String[] lines = content.split(";");	
 				  for(String line : lines)
 				  {
@@ -224,45 +247,67 @@ public class Driver {
 							 runningAths.add(ath);
 						 }
 						 if("super".equals(ath.getAthType())){
-							 superAths.add(ath);
+							// superAths.add(ath);
+							 swimmingAths.add(ath);
+							 cyclingAths.add(ath);
+							 runningAths.add(ath);
 						 }
 						 if(!"officer".equals(ath.getAthType()))
 							 aths.add(ath);
 					 }	  
 				  }
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
+				 
 				  
-				 System.out.println("there are "+aths.size()+" athletes");
-				 for(Athletes a : aths){
-					System.out.println(a);
-				 }
-				 System.out.println("");
+//				 System.out.println("there are "+aths.size()+" athletes");
+//				 for(Athletes a : aths){
+//					System.out.println(a);
+//				 }
+//				 System.out.println("");
 			}
 			
 			
 			/**
 			 * loading referee
+			 * @throws NoRefereeException 
 			 */
-			public void loadOffics(){
+			public void loadOffics() throws NoRefereeException{
 				
-				  String content = FileUtils.readFile("participants.txt");
-				  String[] lines = content.split(";");	
-				  for(String line : lines){
-					 String[] values = line.split(", ");
-					  
-					 if(("officer".equals(values[1])))
-					 {
-						 Officials offic = new Officials(values[0], values[2], Integer.parseInt(values[3]),
-								 values[4], "");
+				  String content=null;
+				  try {
+					  content = FileUtils.readFile("participants.txt");
+					  String[] lines = content.split(";");	
+					  for(String line : lines){
+						 String[] values = line.split(", ");
+						  
+						 if(("officer".equals(values[1])))
+						 {
+							 Officials offic = new Officials(values[0], values[2], Integer.parseInt(values[3]),
+									 values[4], "");
+							 
+							 offics.add(offic);
+						 }
 						 
-						 offics.add(offic);
-					 }
-					 
-				  }
+					  }
+					  if(offics.size()==0)
+					  {
+						  throw new NoRefereeException("Warning: There is no officials.");
+					  }
+				} catch (Exception e) {
+					System.err.println(e.getMessage());
+				}
 				  
-				 System.out.println("there are "+offics.size()+" officials");
-				 for(Officials offic : offics){
-					System.out.println(offic);
-				 }
-				 System.out.println("");
+				  
+//				 System.out.println("there are "+offics.size()+" officials");
+//				 for(Officials offic : offics){
+//					System.out.println(offic);
+//				 }
+//				 System.out.println("");
+			}
+			public int add(int a,int b)
+			{
+				return a+b;
 			}
 }

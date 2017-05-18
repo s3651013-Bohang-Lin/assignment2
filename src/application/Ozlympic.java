@@ -12,11 +12,16 @@ public class Ozlympic {
 	static{
 		driver = new Driver();
 		driver.loadPlayers();
-		driver.loadOffics();
+		try {
+			driver.loadOffics();
+		} catch (NoRefereeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	public static void main(String[] args) {
-		display();
-	}
+//	public static void main(String[] args) {
+//		display();
+//	}
 	
 	public static void display()
 	{

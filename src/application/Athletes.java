@@ -1,13 +1,24 @@
 package application;
 
+import javafx.scene.control.CheckBox;
+
 /**
  * Athletes class
  * @author JinMing Liu s3596621
  *
  */
 public class Athletes extends Participants {
-	private Integer score = 0;
+	private CheckBox checkbox=new CheckBox();
+	public CheckBox getCheckbox() {
+		return checkbox;
+	}
 
+	public void setCheckbox(CheckBox checkbox) {
+		this.checkbox = checkbox;
+	}
+
+	private Integer score = 0;
+	public double seconds = 0;
 	public Athletes(String athID,String athName,int athAge,String athState, String athType)
 	{
 		super(athID, athName, athAge, athState, athType);
@@ -17,6 +28,14 @@ public class Athletes extends Participants {
 	{
 		this("","",0,"","");
 		
+	}
+	
+	public double getSeconds(){
+		return seconds;
+	}
+	
+	public void setSeconds(double seconds){
+		this.seconds = seconds;
 	}
 	public Integer getScore() {
 		return score;

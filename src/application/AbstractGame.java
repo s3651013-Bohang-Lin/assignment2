@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Date;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
+
 import java.io.*;
 import java.text.SimpleDateFormat;
 import javafx.application.Application;
@@ -66,21 +70,31 @@ public abstract class AbstractGame {
 	 * To start the game, you will call a random score to generate the results of each player 
 	 * Save to map for later query use 
 	 */
-	public void runGame(){
+	public void runGame() throws TooFewAthleteException, NoRefereeException, GameFullException,WrongTypeException{
 		isRun = true;   //Modify the operation flag bit true, said the implementation of the rungame steps
 
-		if(athletes.size() < 4){
-			System.out.println("==========================================================");
-			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
-			System.out.println("the game is not run because athletes is less than 4");
-			return;
+		if(athletes.size() < 4)
+		{
+			throw new TooFewAthleteException("Warning: athletes are less than 4");
+			//System.out.println("==========================================================");
+			//System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
+			//System.out.println("the game is not run because athletes is less than 4");
+			//return;
 		}
 		
+		if(athletes.size() > 8)
+		{
+			throw new GameFullException("Warning: athletes are more than 8");
+			//System.out.println("==========================================================");
+			//System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
+			//System.out.println("the game is not run because athletes is less than 4");
+			//return;
+		}
 		for(Athletes athlete : athletes){
 			double seconds = compete();
+			athlete.setSeconds(seconds);
 			athletsSecondResult.put(athlete.getAthID(), seconds);
 		}
-		saveGameResults();
 	}
 	
 	public void saveGameResults()
@@ -89,10 +103,11 @@ public abstract class AbstractGame {
 		
 		try {
 			
-			out = new FileWriter("gameResults.txt");
-			String newline = System.getProperty("line.seperator");
+			out = new FileWriter("gameResults.txt",true);
+			//String newline = System.getProperty("line.seperator");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-			String line = gameId + " " + gameName + " " + sdf + "\r\n";
+			
+			String line = gameId + " " + gameName + " " + sdf.format(new Date()) + "\r\n";
 			out.write(line);
 			for(int i = 0; i < athletes.size(); i++)
 			{
@@ -101,12 +116,25 @@ public abstract class AbstractGame {
 						athletes.get(i).getScore() + "\r\n";
 				out.write(line);
 			}
-			
+			out.write("\r\n");
 			out.close();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		try {
+			for (Athletes ath : athletes) 
+			{
+//				Connection connection = DriverManager.getConnection("jdbc:sqlite:test.db");  
+//				Statement  statement = connection.createStatement();  
+				Main.statement.executeUpdate("insert into result values('"+getGameId()+"', '"+getOffi().getOffiID()+"', '"+ath.getAthID()+"', " +ath.getSeconds()+", " +ath.getScore()+")"); 
+				
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 		
 	
@@ -120,7 +148,7 @@ public abstract class AbstractGame {
 	 * Show all the players participating in the game 
 	 * Query results by query map 
 	 */
-	public void displayAthletsResults(){
+	public String displayAthletsResults(){
 //		if(!isRun){//If you do not select the 3 run the game can not show results
 //			System.out.println("==========================================================");
 //			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
@@ -134,13 +162,17 @@ public abstract class AbstractGame {
 //			System.out.println("the game is not run because athletes is less than 4");
 //			return;
 //		}
-		System.out.println("==========================================================");
-		System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
+		String res="";
+		res+="==========================================================\r\n";
+		res+="game id:"+this.getGameId() + ", name:"+this.gameName+"\r\n";
 		Officials offi = this.getOffi();
-		System.out.println("officials: "+offi);
+		res+="officials: "+offi+"\r\n";
 		for(Athletes ath : athletes){
 			double second = athletsSecondResult.get(ath.getAthID());
-			System.out.println(ath+" "+ second +"s");
+			res+=ath+" "+ second +"s"+"\r\n";
+			
 		}
+		System.out.println(res);
+		return res;
 	}
 }

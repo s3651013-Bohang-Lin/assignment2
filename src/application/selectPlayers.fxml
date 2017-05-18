@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.selectPlayersController">
+   <children>
+      <TableView fx:id="playersTable" layoutX="14.0" layoutY="14.0" prefHeight="377.0" prefWidth="296.0">
+        <columns>
+          <TableColumn fx:id="checklist" prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="331.0" layoutY="122.0" mnemonicParsing="false" onAction="#StartGame" text="Button" />
+      <Button layoutX="325.0" layoutY="178.0" mnemonicParsing="false" onAction="#backClick" text="Back" />
+      <Button layoutX="317.0" layoutY="236.0" mnemonicParsing="false" onAction="#homeClick" text="Home" />
+   </children>
+</AnchorPane>

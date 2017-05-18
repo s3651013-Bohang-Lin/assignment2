@@ -33,7 +33,7 @@ public class myController implements Initializable{
 	}
 	public void resultsClick(ActionEvent event)
 	{
-		
+		Main.loadPage("scoreScene.fxml");
 	}
 	public void pointsClick(ActionEvent event)
 	{

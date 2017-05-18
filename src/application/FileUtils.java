@@ -30,8 +30,8 @@ public class FileUtils {
             read.close();
             return content;
         } catch (Exception e) {
-            System.out.println("error");
-            e.printStackTrace();
+            System.out.println("cannot find participants.txt.");
+            
             return "";
         }finally{
         }
