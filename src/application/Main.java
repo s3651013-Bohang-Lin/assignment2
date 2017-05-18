@@ -19,18 +19,41 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.BorderPane;
 
-
+/**
+ * <h1>Main</h1>
+ * Main class inherit Application class to implement application level global variables 
+ * this class used to create and connect a database to store information of Athletes and officials
+ * and load a page.
+ * @version jdk1.8
+ * @author Bohang Lin s3651013
+ *
+ */
 public class Main extends Application {
+	/**
+	 * @param mainStage Stage
+	 * @param driver Driver
+	 * @param connection Connection
+	 * @param statement Statement
+	 * @param offID String
+	 * @param gameType String
+	 * */
 	public static Stage mainStage;
 	public static Driver driver;
 	public static Connection connection = null; 
 	public static Statement statement=null;
 	public static String offID="";
 	public static String gameType="";
+	
+	/**
+	 *start method used to create and connect a database to store information of Athletes and officials
+	 *@param primaryStage Stage
+	 *@return Nothing.
+	 *@throws SQLException An exception that provides information on a database access error or other errors.
+	 *@throws ClassNotFoundException Thrown when an application tries to load in a class through its string name using: 
+	 *@throws NoRefereeException when trying run a game which has no official appointed.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
-	  
-	     
 	    try  
 	    {  
 	    	Class.forName("org.sqlite.JDBC");
@@ -68,6 +91,11 @@ public class Main extends Application {
 		}
 		Main.loadPage("myScene.fxml");
 	}
+	/**
+	 *alert method used to Popup warning window 
+	 *@param header String
+	 *@param message String
+	 */
 	public static void alert(String header,String message)
 	{
 	        Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -79,6 +107,13 @@ public class Main extends Application {
 	    
 	}
 	
+	/**
+	 *load method used to create a new page of GUI
+	 *@param filename String
+	 *@throws Exception The class Exception and its subclasses are a form of Throwable that indicates 
+	 *conditions that a reasonable application might want to catch. 
+	 *@throws SQLException An exception that provides information on a database access error or other errors.
+	 */
 	public static void loadPage(String filename)
 	{
 		try {
@@ -89,12 +124,17 @@ public class Main extends Application {
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(Main.class.getResource("application.css").toExternalForm());
 			Main.mainStage.setScene(scene);
-			Main.mainStage.show();//mainStage鏄竴涓獥鍙ｄ竴鐩磋璋冪敤锛屾墍浠ヤ笉浼氬脊鍑烘柊鐨勭獥鍙�
+			Main.mainStage.show();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 *insertResult method used to insert data in database
+	 *@param sql String
+	 *@throws SQLException An exception that provides information on a database access error or other errors.
+	 */
 	public static void insertResult(String sql)
 	{
 		Connection connection;
@@ -111,7 +151,12 @@ public class Main extends Application {
 		
 		
 	}
-	public static int getCountOfSwimming(int gametype)
+	/**
+	 *getCountOfGameType method used to create game ID
+	 *@param gametype int 
+	 *@throws SQLException An exception that provides information on a database access error or other errors.
+	 */
+	public static int getCountOfGameType(int gametype)
 	{
 		int num=0;
 		ResultSet rs ;

@@ -1,7 +1,9 @@
 package application;
 
 /**
+ * <h1>GameEnum</h1>
  * Game type enumeration
+ * @version jdk1.8
  * @author Bohang Lin s3651013
  *
  */
@@ -9,11 +11,24 @@ public enum GameEnum {
 	SWIMMING(1, "swimming", "S"),
 	RUNNING(2, "running", "R"),
 	CYCLING(3, "cycling", "C");
-	
+	/**
+	 * @param value int
+	 * @param name String
+	 * @param gameIdPre String
+	 */
 	private int value;
 	private String name;
 	private String gameIdPre;
 	
+	/** 
+	 * The constructor with parameters 
+	 * @param value
+	 * Ref int
+	 * @param name
+	 * Ref String
+	 * @param pre
+	 * Ref String
+	 */
     GameEnum(int value, String name, String pre){
 		this.setValue(value);
 		this.setName(name);
@@ -45,7 +60,7 @@ public enum GameEnum {
 	}
 	/**
 	 * Game type enumeration
-	 * return GameEnum
+	 * @return GameEnum
 	 */
 	public static GameEnum getGameByIndex(int index)
 	{

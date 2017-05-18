@@ -3,8 +3,10 @@ package application;
 import java.util.HashMap;
 import java.util.Map;
 /**
- *  because the game can choose more than one election each time the same game Id need to change 
- * So through the factory class to create the game 
+ * <h1>GameFactory</h1>
+ * GameFactory class used to create the game,
+ * because the game can choose more than one election each time the same game Id need to change 
+ * @version jdk1.8
  * @author Bohang Lin s3651013
  *
  */
@@ -20,23 +22,23 @@ public class GameFactory {
 	
 	/**
 	 * Create a game based on the selected game type 
-	 * @param gameType
-	 * @return
+	 * @param gameType GameEnum
+	 * @return AbstractGame
 	 */
 	
 	public static AbstractGame createAGame(GameEnum gameType){
 		int nowNum = 0;
 		switch(gameType){
 		  case SWIMMING:
-			  nowNum = Main.getCountOfSwimming(1) + 1;
+			  nowNum = Main.getCountOfGameType(1) + 1;
 			  gameMap.put(gameType, nowNum);
 			  return new Swimming(gameType.getGameIdPre() + nowNum);
 		  case RUNNING:
-			  nowNum = Main.getCountOfSwimming(2) + 1;
+			  nowNum = Main.getCountOfGameType(2) + 1;
 			  gameMap.put(gameType, nowNum);
 			  return new Running(gameType.getGameIdPre() + nowNum);
 		  case CYCLING:
-			  nowNum = Main.getCountOfSwimming(3) + 1;
+			  nowNum = Main.getCountOfGameType(3) + 1;
 			  gameMap.put(gameType, nowNum);
 			  return new Cycling(gameType.getGameIdPre() + nowNum);
 		  default:

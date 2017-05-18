@@ -128,6 +128,13 @@ public class Driver {
 	  
 	/**
 	 * case3: Run all races Statistical performance of athlete
+	 * @throws TooFewAthleteException when trying to run a game, which has less than 4 athletes registered.
+	 * @throws NoRefereeException when trying run a game which has no official appointed.
+	 * @throws GameFullException when trying to add an athlete to a game which already has 8 athletes registered
+	 * @throws WrongTypeException when trying to add an athlete to a wrong type of game e.g assigning a swimmer 
+	 * to a running game. Note, super athletes can participate in all three types of games. 
+	 * This exception is also for attempts of assigning an athlete as an official or assigning an official to a game.
+	 *
 	 */
 	public void runningTheGames() {
 		System.out.println(" now has " + games.size() + " games");
@@ -226,6 +233,8 @@ public class Driver {
 	/**
 	 * loadPlayers method used to read all athletes' information from
 	 * "participants.txt"
+	 * @throws Exception The class Exception and its subclasses are a form of
+	 *  Throwable that indicates conditions that a reasonable application might want to catch. 
 	 */
 	public void loadPlayers() {
 
