@@ -1,7 +1,9 @@
 package application;
 
 /**
- * Cyclng class
+ * <h1>Cycling</h1>
+ * Cycling class provides general behavior to generate random seconds of cyclists
+ * @version jdk1.8
  * @author JinMing Liu s3596621
  *
  */

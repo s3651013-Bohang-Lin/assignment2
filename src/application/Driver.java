@@ -1,10 +1,6 @@
 package application;
 
-/**
- * the main methods to run the game
- * @author Bohang Lin s3651013
- *
- */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,9 +8,23 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
-
+/**
+ * <h1>Driver</h1>
+ * Driver Class provides the main methods to run the game
+ * @version jdk1.8
+ * @author Bohang Lin s3651013
+ *
+ */
 public class Driver {
 	
+	/**
+	 * @param gameId String
+	 * @param gameName String
+	 * @param offi Officials
+	 * @param isRun boolean
+	 * @param athletes List<Athletes>
+	 * @param athletsSecondResult Map<String, Double>
+	 * */
 	private String info = new String("");
 	public  ArrayList<Officials> offics = new ArrayList<Officials>();
 	public List<AbstractGame> games = new ArrayList<AbstractGame>();
@@ -174,6 +184,7 @@ public class Driver {
 	  /**
 		 * case 4:
 		 * Show the results of all athletes
+		 * @return String
 	  */
 	  public String disPlayAllGameResult(){
 		  String res="";
@@ -271,7 +282,7 @@ public class Driver {
 			
 			/**
 			 * loading referee
-			 * @throws NoRefereeException 
+			 * @throws NoRefereeException when trying run a game which has no official appointed.
 			 */
 			public void loadOffics() throws NoRefereeException{
 				

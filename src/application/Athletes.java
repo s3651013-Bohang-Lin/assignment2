@@ -3,20 +3,18 @@ package application;
 import javafx.scene.control.CheckBox;
 
 /**
- * Athletes class
+ * <h1>Athletes</h1>
+ * Athletes class provides general attributes of athletes
+ * @version jdk1.8
  * @author JinMing Liu s3596621
- *
  */
 public class Athletes extends Participants {
+	/**
+	 * @param checkbox CheckBox
+	 * @param score Integer
+	 * @param seconds double
+	 * */
 	private CheckBox checkbox=new CheckBox();
-	public CheckBox getCheckbox() {
-		return checkbox;
-	}
-
-	public void setCheckbox(CheckBox checkbox) {
-		this.checkbox = checkbox;
-	}
-
 	private Integer score = 0;
 	public double seconds = 0;
 	public Athletes(String athID,String athName,int athAge,String athState, String athType)
@@ -29,7 +27,13 @@ public class Athletes extends Participants {
 		this("","",0,"","");
 		
 	}
-	
+	public CheckBox getCheckbox() {
+		return checkbox;
+	}
+
+	public void setCheckbox(CheckBox checkbox) {
+		this.checkbox = checkbox;
+	}
 	public double getSeconds(){
 		return seconds;
 	}
@@ -43,8 +47,6 @@ public class Athletes extends Participants {
 	public void setScore(Integer score) {
 		this.score = score;
 	}
-	
-	//overriding
 	public String getAthID()
 	{
 		return super.getUniqueID();

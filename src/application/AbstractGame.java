@@ -34,7 +34,13 @@ public abstract class AbstractGame {
 	private boolean isRun = false; 
 	private List<Athletes> athletes = new ArrayList<Athletes>();
 	private Map<String, Double> athletsSecondResult = new HashMap<String, Double>();
-	
+	/** 
+	 * The constructor with parameters 
+	 * @param gameId
+	 * Ref String 
+	 * @param gameName 
+	 * Ref String
+	 */
 	public AbstractGame(String gameId, String gameName) {
 		super();
 		this.gameId = gameId;
@@ -165,7 +171,7 @@ public abstract class AbstractGame {
 	/**
 	 * Show all the players participating in the game 
 	 * Query results by query map 
-	 * @return res
+	 * @return res String
 	 */
 	public String displayAthletsResults(){
 //		if(!isRun){//If you do not select the 3 run the game can not show results
