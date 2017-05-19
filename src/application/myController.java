@@ -27,7 +27,7 @@ public class myController implements Initializable{
 	private Button btntest;
 	public void selectClick(ActionEvent event)
 	{
-		1Ozlympic.loadPage("selectGame.fxml");
+		Ozlympic.loadPage("selectGame.fxml");
 	}
 
 	public void resultsClick(ActionEvent event)
