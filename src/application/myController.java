@@ -27,12 +27,12 @@ public class myController implements Initializable{
 	private Button btntest;
 	public void selectClick(ActionEvent event)
 	{
-		Main.loadPage("selectGame.fxml");
+		Ozlympic.loadPage("selectGame.fxml");
 	}
 
 	public void resultsClick(ActionEvent event)
 	{
-		Main.loadPage("scoreScene.fxml");
+		Ozlympic.loadPage("scoreScene.fxml");
 	}
 
 	public void exitClick(ActionEvent event)

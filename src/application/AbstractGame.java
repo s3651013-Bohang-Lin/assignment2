@@ -156,7 +156,7 @@ public abstract class AbstractGame {
 			{
 //				Connection connection = DriverManager.getConnection("jdbc:sqlite:test.db");  
 //				Statement  statement = connection.createStatement();  
-				Main.statement.executeUpdate("insert into result values('"+getGameId()+"', '"+getOffi().getOffiID()+"', '"+ath.getAthID()+"', " +ath.getSeconds()+", " +ath.getScore()+")"); 
+				Ozlympic.statement.executeUpdate("insert into result values('"+getGameId()+"', '"+getOffi().getOffiID()+"', '"+ath.getAthID()+"', " +ath.getSeconds()+", " +ath.getScore()+")"); 
 				
 			}
 			

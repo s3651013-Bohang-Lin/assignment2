@@ -25,9 +25,9 @@ public class resultsController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		resultsTextArea.setText(Main.driver.disPlayAllGameResult()+Main.driver.message);
-		Main.driver.message="";
-		Main.driver.calThePlayerScores();
+		resultsTextArea.setText(Ozlympic.driver.disPlayAllGameResult()+Ozlympic.driver.message);
+		Ozlympic.driver.message="";
+		Ozlympic.driver.calThePlayerScores();
 		
 		
 	}
@@ -35,13 +35,13 @@ public class resultsController implements Initializable {
 	public void backClick(ActionEvent event)
 	{
 		
-		Main.loadPage("selectGame.fxml");
+		Ozlympic.loadPage("selectGame.fxml");
 			
 	}
 	public void homeClick(ActionEvent event)
 	{
 
-		Main.loadPage("myScene.fxml");
+		Ozlympic.loadPage("myScene.fxml");
 			
 	}
 }

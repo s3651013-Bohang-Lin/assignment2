@@ -25,7 +25,7 @@ public class scoreController implements Initializable {
 		// TODO Auto-generated method stub
 		ResultSet rs ;
 		try {
-			rs = Main.statement.executeQuery("select * from result");
+			rs = Ozlympic.statement.executeQuery("select * from result");
 			while(rs.next())  
 		      {  
 		        resultsBean result = new resultsBean();
@@ -51,13 +51,13 @@ public class scoreController implements Initializable {
 	public void backClick(ActionEvent event)
 	{
 		
-		Main.loadPage("selectGame.fxml");
+		Ozlympic.loadPage("selectGame.fxml");
 			
 	}
 	public void homeClick(ActionEvent event)
 	{
 
-		Main.loadPage("myScene.fxml");
+		Ozlympic.loadPage("myScene.fxml");
 			
 	}
 }

@@ -25,16 +25,16 @@ public class selectPlayersController implements Initializable{
 		ObservableList list=FXCollections.observableArrayList();
 		// TODO Auto-generated method stub
 		ArrayList<Athletes> temparr=null;
-		if(Main.gameType.equals("swimming"))
+		if(Ozlympic.gameType.equals("swimming"))
 		{
-			temparr=Main.driver.swimmingAths;
-		}else if(Main.gameType.equals("running"))
+			temparr=Ozlympic.driver.swimmingAths;
+		}else if(Ozlympic.gameType.equals("running"))
 		{
-			temparr=Main.driver.runningAths;
+			temparr=Ozlympic.driver.runningAths;
 					
-		}else if(Main.gameType.equals("cycling"))
+		}else if(Ozlympic.gameType.equals("cycling"))
 		{
-			temparr=Main.driver.cyclingAths;
+			temparr=Ozlympic.driver.cyclingAths;
 		}
 		for (Athletes object : temparr) {
 			list.add(object);
@@ -49,19 +49,19 @@ public class selectPlayersController implements Initializable{
 		ArrayList<Athletes> ath = new ArrayList<Athletes>();
 		AbstractGame game = null;
 		ArrayList<Athletes> temparr=null;
-		if(Main.gameType.equals("swimming"))
+		if(Ozlympic.gameType.equals("swimming"))
 		{
 			game = GameFactory.createAGame(GameEnum.getGameByIndex(1));
-			temparr=Main.driver.swimmingAths;
-		}else if(Main.gameType.equals("running"))
+			temparr=Ozlympic.driver.swimmingAths;
+		}else if(Ozlympic.gameType.equals("running"))
 		{
 			game = GameFactory.createAGame(GameEnum.getGameByIndex(2));
-			temparr=Main.driver.runningAths;
+			temparr=Ozlympic.driver.runningAths;
 					
-		}else if(Main.gameType.equals("cycling"))
+		}else if(Ozlympic.gameType.equals("cycling"))
 		{
 			game = GameFactory.createAGame(GameEnum.getGameByIndex(3));
-			temparr=Main.driver.cyclingAths;
+			temparr=Ozlympic.driver.cyclingAths;
 		}
 		for (Athletes object : temparr) {
 			if(object.getCheckbox().isSelected()) //Determine whether or not you are selected
@@ -70,7 +70,7 @@ public class selectPlayersController implements Initializable{
 				//System.out.println(object.getName());
 			}
 		}
-		game.setOffi(getOfficialByID(Main.offID));
+		game.setOffi(getOfficialByID(Ozlympic.offID));
 		game.setAthlets(ath);
 	
 		try {
@@ -90,7 +90,7 @@ public class selectPlayersController implements Initializable{
 			System.err.println(e.getMessage());
 		}
 		
-		Main.loadPage("scoreScene.fxml");
+		Ozlympic.loadPage("scoreScene.fxml");
 	}
 	/**
 	 * the  methods to get Official By ID
@@ -99,7 +99,7 @@ public class selectPlayersController implements Initializable{
 	 * @return Officials
 	 */
 	public Officials getOfficialByID(String ID){
-		ArrayList<Officials> officials=Main.driver.offics;
+		ArrayList<Officials> officials=Ozlympic.driver.offics;
 		Officials officials2;
 		for(int i = 0; i <= officials.size();i++)
 		{
@@ -115,13 +115,13 @@ public class selectPlayersController implements Initializable{
 	public void backClick(ActionEvent event)
 	{
 		
-		Main.loadPage("selectGame.fxml");
+		Ozlympic.loadPage("selectGame.fxml");
 			
 	}
 	public void homeClick(ActionEvent event)
 	{
 
-		Main.loadPage("myScene.fxml");
+		Ozlympic.loadPage("myScene.fxml");
 			
 	}
 }

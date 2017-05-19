@@ -30,15 +30,15 @@ public class GameFactory {
 		int nowNum = 0;
 		switch(gameType){
 		  case SWIMMING:
-			  nowNum = Main.getCountOfGameType(1) + 1;
+			  nowNum = Ozlympic.getCountOfGameType(1) + 1;
 			  gameMap.put(gameType, nowNum);
 			  return new Swimming(gameType.getGameIdPre() + nowNum);
 		  case RUNNING:
-			  nowNum = Main.getCountOfGameType(2) + 1;
+			  nowNum = Ozlympic.getCountOfGameType(2) + 1;
 			  gameMap.put(gameType, nowNum);
 			  return new Running(gameType.getGameIdPre() + nowNum);
 		  case CYCLING:
-			  nowNum = Main.getCountOfGameType(3) + 1;
+			  nowNum = Ozlympic.getCountOfGameType(3) + 1;
 			  gameMap.put(gameType, nowNum);
 			  return new Cycling(gameType.getGameIdPre() + nowNum);
 		  default:
