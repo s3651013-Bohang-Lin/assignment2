@@ -8,18 +8,21 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.selectController">
    <children>
-      <Button layoutX="273.0" layoutY="87.0" mnemonicParsing="false" onAction="#swimmingClick" prefHeight="52.0" prefWidth="74.0" text="Swimming" textAlignment="CENTER" />
-      <Button layoutX="273.0" layoutY="148.0" mnemonicParsing="false" onAction="#runningClick" prefHeight="52.0" prefWidth="74.0" text="Running" />
-      <Button layoutX="273.0" layoutY="209.0" mnemonicParsing="false" onAction="#cyclingClick" prefHeight="52.0" prefWidth="74.0" text="Cycling" />
-      <TableView fx:id="officialsTable" layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="270.0">
+      <Button layoutX="302.0" layoutY="82.0" mnemonicParsing="false" onAction="#swimmingClick" prefHeight="52.0" prefWidth="98.0" text="Swimming" textAlignment="CENTER" textFill="#070707" />
+      <Button layoutX="302.0" layoutY="148.0" mnemonicParsing="false" onAction="#runningClick" prefHeight="52.0" prefWidth="98.0" text="Running" textFill="#070707" />
+      <Button layoutX="302.0" layoutY="215.0" mnemonicParsing="false" onAction="#cyclingClick" prefHeight="52.0" prefWidth="98.0" text="Cycling" textFill="#070707" />
+      <TableView fx:id="officialsTable" prefHeight="400.0" prefWidth="302.0">
         <columns>
-          <TableColumn prefWidth="70.0" text="ID" />
-          <TableColumn prefWidth="80.0" text="Name" />
-          <TableColumn prefWidth="40.0" text="Age" />
-          <TableColumn prefWidth="80.0" text="State" />
+          <TableColumn prefWidth="85.0" text="ID" />
+          <TableColumn prefWidth="82.0" text="Name" />
+          <TableColumn prefWidth="47.0" text="Age" />
+          <TableColumn prefWidth="87.0" text="State" />
         </columns>
       </TableView>
       <ColorPicker />
-      <Button layoutX="273.0" layoutY="305.0" mnemonicParsing="false" onAction="#homeClick" text="Home" />
+      <Button layoutX="302.0" layoutY="348.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="52.0" prefWidth="98.0" text="Home" textFill="#070707">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

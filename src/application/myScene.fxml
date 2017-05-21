@@ -8,15 +8,15 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.myController">
    <children>
-      <Button id="btntest" fx:id="btntest" layoutX="212.0" layoutY="129.0" mnemonicParsing="false" onAction="#selectClick" prefHeight="133.0" prefWidth="149.0" text="Select a game" textFill="#070707">
+      <Button id="btntest" fx:id="btntest" layoutX="82.0" layoutY="101.0" mnemonicParsing="false" onAction="#selectClick" prefHeight="133.0" prefWidth="252.0" text="Select a game" textFill="#070707">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button layoutX="191.0" layoutY="300.0" mnemonicParsing="false" onAction="#resultsClick" prefHeight="176.0" prefWidth="190.0" text="Display the final &#10;results of all games">
+      <Button layoutX="82.0" layoutY="286.0" mnemonicParsing="false" onAction="#resultsClick" prefHeight="133.0" prefWidth="252.0" text="Display the final &#10;results of all games" textFill="#070707">
          <font>
-            <Font name="MS Outlook" size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button layoutX="458.0" layoutY="496.0" mnemonicParsing="false" onAction="#exitClick" prefHeight="36.0" prefWidth="78.0" text="Exit">
+      <Button layoutX="458.0" layoutY="490.0" mnemonicParsing="false" onAction="#exitClick" prefHeight="36.0" prefWidth="78.0" text="Exit" textFill="#070707">
          <font>
             <Font name="Ravie" size="18.0" />
          </font></Button>
