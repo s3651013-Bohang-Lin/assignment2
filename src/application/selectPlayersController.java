@@ -171,7 +171,7 @@ public class selectPlayersController implements Initializable{
 	        };
 		      
 		    //将x的位置在500ms内移动到300处  
-		    final KeyValue kv=new KeyValue(t.xProperty(), 330);  
+		    final KeyValue kv=new KeyValue(t.xProperty(), 430);  
 		    final KeyFrame kf=new KeyFrame(Duration.millis(a.getSeconds()*1000),onFinished, kv);  
 		    //将关键帧加到时间轴中  
 		    timeline.getKeyFrames().add(kf);  
@@ -179,11 +179,11 @@ public class selectPlayersController implements Initializable{
 		    
 	    }
 	    
-	    final Line line1=new Line(20,40,20,35+40*count);
+	    final Line line1=new Line(20,35,20,39*count);
 	    line1.setStrokeWidth(5);
 	    line1.setStroke(Color.BLACK);
 	    border.getChildren().add(line1);
-	    final Line line2=new Line(330,40,330,35+40*count);
+	    final Line line2=new Line(430,35,430,39*count);
 	    line2.setStrokeWidth(5);
 	    line2.setStroke(Color.BLACK);
 	    border.getChildren().add(line2);
