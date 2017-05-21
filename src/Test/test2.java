@@ -1,9 +1,11 @@
-package application;
+package Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import application.Cycling;
 
 public class test2 {
 

@@ -121,8 +121,18 @@ public class Ozlympic extends Application {
 			java.net.URL url = Ozlympic.class.getResource(filename);
 	        
 	        Parent root = FXMLLoader.load(url);
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,650,650);
 			scene.getStylesheets().add(Ozlympic.class.getResource("application.css").toExternalForm());
+			Ozlympic.mainStage.setScene(scene);
+			Ozlympic.mainStage.show();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void loadPage(Scene scene)
+	{
+		try {
 			Ozlympic.mainStage.setScene(scene);
 			Ozlympic.mainStage.show();
 			
