@@ -33,8 +33,7 @@ public class resultsController implements Initializable {
 		
 		resultsTextArea.setText(Ozlympic.driver.disPlayAllGameResult()+Ozlympic.driver.message);
 		Ozlympic.driver.message="";
-		Ozlympic.driver.calThePlayerScores();
-			
+		Ozlympic.driver.calThePlayerScores();		
 	}
 	
 	public void backClick(ActionEvent event)
