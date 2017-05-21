@@ -4,15 +4,19 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 PROJECT TITLE: Ozlympic Games
-PURPOSE OF PROJECT: This assignment involves implementing a system for managing a mini game event ¨C Ozlympic Games.
+PURPOSE OF PROJECT: This assignment involves implementing a system for managing a mini game event ï¿½C Ozlympic Games.
 The aim of the Ozlympic Games is for a user to:
- 1.Select a game to run.
- 2.Allow the user to predict the winner of that game.
- 3.Start the game and award points to top 3 athletes according to their finishing time.
- 4.Display a congratulation message if the user prediction is correct.
- 5.Display the final result of all games including the name of the referee for each game.
- 6.Display the points of athletes.
-HOW TO START THIS PROJECT: select 1 to choose a game and choose a official. select 2 can predict a winner.
-select will run the game. select 4 will display the result of all games. select 5 will display the athletes scores
-select will exit the system.
+Create a new game either running, cycling or swimming and select a group of athletes for that
+game;
+
+
+HOW TO START THIS PROJECT:
+ click the button select a game, then choose a referee from the list and choose
+one game to click button,then choose more than 3 and less than 9 athletes and click start button, then click 
+showResults button you can see the results.
+
+NOTICE!!!:
+you need import four jar package int the directory,and there are two places to show the results, first
+is by the GUI, second is from the gameResults.txt. In addition, you must modify participants.txt by the eclipse
+
 AUTHORS:Bohang Lin s3651013 and Jinming Liu s3596621
