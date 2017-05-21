@@ -56,9 +56,7 @@ public class selectController implements Initializable{
 				Ozlympic.loadPage("selectPlayers.fxml");
 			}catch (Exception e) {
 				Ozlympic.alert("Warning", "please chose one referee");
-			}
-			
-				
+			}	
 		}
 		
 		public void runningClick(ActionEvent event)
@@ -74,13 +72,13 @@ public class selectController implements Initializable{
 				Ozlympic.loadPage("selectPlayers.fxml");	
 				Ozlympic.driver.disPlayAllGameResult();
 			}catch (Exception e) {
-				Ozlympic.alert("Warning", "please chose one row");
+				Ozlympic.alert("Warning", "please chose one referee");
 			}	
 		}
 		
 		public void cyclingClick(ActionEvent event)
 		{
-			Boolean ok=true;
+			Boolean ok = true;
 			String selOffic="";
 			try{
 			int row = officialsTable.getSelectionModel().getSelectedIndex();
@@ -88,48 +86,10 @@ public class selectController implements Initializable{
 			selOffic= (String) col.getCellObservableValue(row).getValue();
 			Ozlympic.offID=selOffic;
 			Ozlympic.gameType="cycling";
-			ArrayList arrayList=new ArrayList();
-			int count=Ozlympic.driver.cyclingAths.size();
-			for(int i=0;i<Ozlympic.driver.cyclingAths.size();i++)
-			{
-				arrayList.add(Ozlympic.driver.cyclingAths.get(i));
-				if((i+1)%8==0)
-				{
-					AbstractGame game = GameFactory.createAGame(GameEnum.getGameByIndex(3));
-					  game.setOffi(this.getOfficialByID(selOffic));
-					  game.setAthlets((ArrayList)arrayList.clone());
-					  game.runGame();
-					  game.getOffi().calScores(game);
-					  
-					  Ozlympic.driver.games.add(game);
-					  arrayList.clear();
-					  count=count-8;
-				}else {
-					if(Ozlympic.driver.cyclingAths.size()<=4&&i==Ozlympic.driver.cyclingAths.size()-1)
-					{
-						Ozlympic.alert("Warning", "athletes are less than 4");
-						ok=false;
-					}else if(count<4&&Ozlympic.driver.cyclingAths.size()>4&&i==Ozlympic.driver.cyclingAths.size()-1)
-					{
-						Ozlympic.driver.message+=  "Warning: There are "+Ozlympic.driver.cyclingAths.size() + 
-												" cyclists,but there are"+count +" cyclists cannot participate the match.\r\n";
-					}else if(count<8&&i==Ozlympic.driver.cyclingAths.size()-1){
-						AbstractGame game = GameFactory.createAGame(GameEnum.getGameByIndex(3));
-						  game.setOffi(this.getOfficialByID(selOffic));
-						  game.setAthlets((ArrayList)arrayList.clone());
-						  game.runGame();
-						  Ozlympic.driver.games.add(game);
-						  arrayList.clear();
-					}
-				}
-			}
-			if(ok)
-			{
-				Ozlympic.loadPage("selectPlayers.fxml");
-			}
-			Ozlympic.driver.disPlayAllGameResult();
+				Ozlympic.loadPage("selectPlayers.fxml");	
+				Ozlympic.driver.disPlayAllGameResult();
 			}catch (Exception e) {
-				Ozlympic.alert("Warning", "please chose one row");
+				Ozlympic.alert("Warning", "please chose one referee");
 			}			
 		}
 		/**
@@ -147,10 +107,8 @@ public class selectController implements Initializable{
 				if(officials2.getOffiID().equals(ID)){
 					return officials2;
 				}
-				
 			}
 			return null;
-			
 		}
 	
 		public void homeClick(ActionEvent event)
@@ -170,6 +128,7 @@ public class selectController implements Initializable{
 			cols.get(1).setCellValueFactory(new PropertyValueFactory("offiName"));
 			cols.get(2).setCellValueFactory(new PropertyValueFactory("offiAge"));
 			cols.get(3).setCellValueFactory(new PropertyValueFactory("offiState"));
+			cols.get(4).setCellValueFactory(new PropertyValueFactory("offiType"));
 			officialsTable.setItems(list);
 			
 		}

@@ -82,7 +82,6 @@ public class selectPlayersController implements Initializable{
 			if(object.getCheckbox().isSelected()) //Determine whether or not you are selected
 			{
 				ath.add(object);
-				//System.out.println(object.getName());
 			}
 		}
 		game.setOffi(getOfficialByID(Ozlympic.offID));
@@ -109,10 +108,7 @@ public class selectPlayersController implements Initializable{
 			System.err.println(e.getMessage());
 			Ozlympic.alert("Error", e.getMessage());
 		}
-		
-		//Ozlympic.loadPage("scoreScene.fxml");
-		
-		
+			
 	}
 	public void showGame(AbstractGame game)
 	{
@@ -138,9 +134,7 @@ public class selectPlayersController implements Initializable{
 	    int count=0;
 	    Text[] texts=new Text[game.getAthlets().size()];
 	    for(Athletes a:game.getAthlets())
-	    {
-	    	
-	    	
+	    {  	
 		    final Text t=new Text();
 		    t.setText(a.getAthName()+" "+a.getAthID());
 		    t.setX(20);

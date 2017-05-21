@@ -13,13 +13,13 @@
       <Button layoutX="477.0" layoutY="292.0" mnemonicParsing="false" onAction="#cyclingClick" prefHeight="52.0" prefWidth="98.0" text="Cycling" textFill="#070707" />
       <TableView fx:id="officialsTable" prefHeight="561.0" prefWidth="476.0">
         <columns>
-          <TableColumn prefWidth="85.0" text="ID" />
-          <TableColumn prefWidth="82.0" text="Name" />
-          <TableColumn prefWidth="47.0" text="Age" />
-          <TableColumn prefWidth="87.0" text="State" />
+          <TableColumn prefWidth="122.0" text="RefereeID" />
+          <TableColumn prefWidth="91.0" text="Name" />
+          <TableColumn prefWidth="49.0" text="Age" />
+          <TableColumn prefWidth="99.0" text="State" />
+            <TableColumn prefWidth="114.0" text="Type" />
         </columns>
       </TableView>
-      <ColorPicker />
       <Button layoutX="477.0" layoutY="509.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="52.0" prefWidth="98.0" text="Home" textFill="#070707">
          <font>
             <Font name="System Bold" size="13.0" />
