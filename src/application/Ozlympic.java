@@ -47,7 +47,6 @@ public class Ozlympic extends Application {
 	/**
 	 *start method used to create and connect a database to store information of Athletes and officials
 	 *@param primaryStage Stage
-	 *@return Nothing.
 	 *@throws SQLException An exception that provides information on a database access error or other errors.
 	 *@throws ClassNotFoundException Thrown when an application tries to load in a class through its string name using: 
 	 *@throws NoRefereeException when trying run a game which has no official appointed.
@@ -95,7 +94,6 @@ public class Ozlympic extends Application {
 	        alert.setContentText(message);
 	        alert.initOwner(Ozlympic.mainStage);
 	        alert.show();
-	    
 	}
 	
 	/**
