@@ -1,5 +1,8 @@
-Oz3434, officer, Mary, 35, VIC
-Oz3432, officer, Morgan, 35, VIC
+Oz0001, officer, Mary1, 35, VIC
+Oz0002, officer, Morgan2, 24, VIC
+Oz0003, officer, Derek3, 29, WA
+Oz0004, officer, Alex4, 25, NSW
+Oz0005, officer, Selena5, 28, WA
 Oz3434, sprinter, Mary, 35, VIC
 Oz0091, super, Hannah, 24, NSW
 Oz1234, swimmer, Beck1, 30, TAS

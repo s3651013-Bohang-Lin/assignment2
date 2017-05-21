@@ -28,20 +28,15 @@ public class resultsController implements Initializable {
 		resultsTextArea.setText(Ozlympic.driver.disPlayAllGameResult()+Ozlympic.driver.message);
 		Ozlympic.driver.message="";
 		Ozlympic.driver.calThePlayerScores();
-		
-		
+			
 	}
 	
 	public void backClick(ActionEvent event)
-	{
-		
-		Ozlympic.loadPage("selectGame.fxml");
-			
+	{	
+		Ozlympic.loadPage("selectGame.fxml");		
 	}
 	public void homeClick(ActionEvent event)
 	{
-
-		Ozlympic.loadPage("myScene.fxml");
-			
+		Ozlympic.loadPage("myScene.fxml");		
 	}
 }

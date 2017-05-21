@@ -70,23 +70,14 @@ public class Ozlympic extends Application {
 	      System.err.println(e.getMessage());  
 	      Ozlympic.alert("Error", "Cannot connect database.");
 	    } catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}  
-	    finally  
-	    {  
-	      if(connection != null) 
-		{
-			//connection.close();  
-		}  
-	    }  
+		} 
 	    Ozlympic.mainStage=new Stage();
 	    Ozlympic.driver=new Driver();
 	    Ozlympic.driver.loadPlayers();
 		try {
 			Ozlympic.driver.loadOffics();
 		} catch (NoRefereeException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Ozlympic.loadPage("myScene.fxml");
@@ -117,7 +108,6 @@ public class Ozlympic extends Application {
 	public static void loadPage(String filename)
 	{
 		try {
-			//BorderPane root = new BorderPane();
 			java.net.URL url = Ozlympic.class.getResource(filename);
 	        
 	        Parent root = FXMLLoader.load(url);
@@ -155,7 +145,6 @@ public class Ozlympic extends Application {
 			statement.close();
 			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
 		
@@ -189,7 +178,6 @@ public class Ozlympic extends Application {
 				num++;
 		      }
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		return num;
@@ -204,14 +192,9 @@ public class Ozlympic extends Application {
 		try {
 			driver.loadOffics();
 		} catch (NoRefereeException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-//	public static void main(String[] args) {
-//		display();
-//	}
-	
 	public static void display()
 	{
 		System.out.println();

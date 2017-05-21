@@ -18,5 +18,4 @@ public class resultsBean extends Athletes{
 		this.offiID = offiID;
 	}
 	
-	
 }

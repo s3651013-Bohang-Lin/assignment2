@@ -102,19 +102,11 @@ public abstract class AbstractGame {
 		if(athletes.size() < 4)
 		{
 			throw new TooFewAthleteException("Warning: athletes are less than 4");
-			//System.out.println("==========================================================");
-			//System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
-			//System.out.println("the game is not run because athletes is less than 4");
-			//return;
 		}
 		
 		if(athletes.size() > 8)
 		{
 			throw new GameFullException("Warning: athletes are more than 8");
-			//System.out.println("==========================================================");
-			//System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
-			//System.out.println("the game is not run because athletes is less than 4");
-			//return;
 		}
 		for(Athletes athlete : athletes){
 			double seconds = compete();
@@ -132,7 +124,6 @@ public abstract class AbstractGame {
 		try {
 			
 			out = new FileWriter("gameResults.txt",true);
-			//String newline = System.getProperty("line.seperator");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 			
 			String line = gameId + " " + gameName + " " + sdf.format(new Date()) + "\r\n";
@@ -146,22 +137,17 @@ public abstract class AbstractGame {
 			}
 			out.write("\r\n");
 			out.close();
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		try {
 			for (Athletes ath : athletes) 
 			{
-//				Connection connection = DriverManager.getConnection("jdbc:sqlite:test.db");  
-//				Statement  statement = connection.createStatement();  
 				Ozlympic.statement.executeUpdate("insert into result values('"+getGameId()+"', '"+getOffi().getOffiID()+"', '"+ath.getAthID()+"', " +ath.getSeconds()+", " +ath.getScore()+")"); 
 				
 			}
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
 		
@@ -174,19 +160,6 @@ public abstract class AbstractGame {
 	 * @return res String
 	 */
 	public String displayAthletsResults(){
-//		if(!isRun){//If you do not select the 3 run the game can not show results
-//			System.out.println("==========================================================");
-//			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
-//			System.out.println("the game is not run please select the menu to start the games.");
-//			return;
-//		}
-//		
-//		if(athletes.size() < 4){//If the player is less than 4, you can't run the game 
-//			System.out.println("==========================================================");
-//			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
-//			System.out.println("the game is not run because athletes is less than 4");
-//			return;
-//		}
 		String res="";
 		res+="==========================================================\r\n";
 		res+="game id:"+this.getGameId() + ", name:"+this.gameName+"\r\n";

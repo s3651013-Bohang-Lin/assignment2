@@ -22,7 +22,6 @@ public class scoreController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		ObservableList list=FXCollections.observableArrayList();
-		// TODO Auto-generated method stub
 		ResultSet rs ;
 		try {
 			rs = Ozlympic.statement.executeQuery("select * from result");
@@ -37,7 +36,6 @@ public class scoreController implements Initializable {
 		        list.add(result);
 		      }
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		ObservableList<TableColumn> cols = score.getColumns();
@@ -49,15 +47,11 @@ public class scoreController implements Initializable {
 		score.setItems(list);
 	}
 	public void backClick(ActionEvent event)
-	{
-		
-		Ozlympic.loadPage("selectGame.fxml");
-			
+	{		
+		Ozlympic.loadPage("selectGame.fxml");	
 	}
 	public void homeClick(ActionEvent event)
 	{
-
-		Ozlympic.loadPage("myScene.fxml");
-			
+		Ozlympic.loadPage("myScene.fxml");	
 	}
 }
