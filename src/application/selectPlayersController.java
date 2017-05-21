@@ -147,7 +147,7 @@ public class selectPlayersController implements Initializable{
 		gridPane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
 		gridPane.setHgap(5.5);
 		gridPane.setVgap(5.5);
-		gridPane.add(button, 2, 5);
+		gridPane.add(button, 15, 55);
 		border.setBottom(gridPane);
 		Scene scene=new Scene(border, 650, 650);
 	    int count=0;

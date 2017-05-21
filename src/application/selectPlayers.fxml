@@ -18,11 +18,17 @@
             <TableColumn fx:id="checklist111" prefWidth="127.0" text="State" />
         </columns>
       </TableView>
-      <Button layoutX="54.0" layoutY="514.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="44.0" prefWidth="79.0" text="Start" textFill="#070707" />
-      <Button layoutX="242.0" layoutY="514.0" mnemonicParsing="false" onAction="#backClick" prefHeight="44.0" prefWidth="79.0" text="Back" textFill="#070707" />
-      <Button layoutX="477.0" layoutY="514.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="44.0" prefWidth="79.0" text="Home" textFill="#070707">
+      <Button layoutX="54.0" layoutY="514.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="58.0" prefWidth="98.0" text="Start" textFill="#070707">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="24.0" />
+         </font></Button>
+      <Button layoutX="274.0" layoutY="514.0" mnemonicParsing="false" onAction="#backClick" prefHeight="58.0" prefWidth="98.0" text="Back" textFill="#070707">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font></Button>
+      <Button layoutX="477.0" layoutY="514.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="58.0" prefWidth="98.0" text="Home" textFill="#070707">
+         <font>
+            <Font name="System Bold" size="23.0" />
          </font></Button>
    </children>
 </AnchorPane>

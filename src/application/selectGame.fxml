@@ -8,9 +8,19 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.selectController">
    <children>
-      <Button layoutX="477.0" layoutY="213.0" mnemonicParsing="false" onAction="#swimmingClick" prefHeight="52.0" prefWidth="98.0" text="Swimming" textAlignment="CENTER" textFill="#070707" />
-      <Button layoutX="477.0" layoutY="135.0" mnemonicParsing="false" onAction="#runningClick" prefHeight="52.0" prefWidth="98.0" text="Running" textFill="#070707" />
-      <Button layoutX="477.0" layoutY="292.0" mnemonicParsing="false" onAction="#cyclingClick" prefHeight="52.0" prefWidth="98.0" text="Cycling" textFill="#070707" />
+      <Button layoutX="477.0" layoutY="213.0" mnemonicParsing="false" onAction="#swimmingClick" prefHeight="52.0" prefWidth="98.0" text="Swimming" textAlignment="CENTER" textFill="#070707">
+    
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="477.0" layoutY="135.0" mnemonicParsing="false" onAction="#runningClick" prefHeight="52.0" prefWidth="98.0" text="Running" textFill="#070707">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Button layoutX="477.0" layoutY="292.0" mnemonicParsing="false" onAction="#cyclingClick" prefHeight="52.0" prefWidth="98.0" text="Cycling" textFill="#070707">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Button>
       <TableView fx:id="officialsTable" prefHeight="561.0" prefWidth="476.0">
         <columns>
           <TableColumn prefWidth="122.0" text="RefereeID" />
@@ -21,11 +31,11 @@
       </TableView>
       <Button layoutX="477.0" layoutY="509.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="52.0" prefWidth="98.0" text="Home" textFill="#070707">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="20.0" />
          </font></Button>
       <Button layoutX="477.0" layoutY="446.0" mnemonicParsing="false" onAction="#backClick" prefHeight="52.0" prefWidth="98.0" text="Back" textFill="#070707">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Button>
    </children>
