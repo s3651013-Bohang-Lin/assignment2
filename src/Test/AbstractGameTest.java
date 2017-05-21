@@ -49,20 +49,4 @@ public class AbstractGameTest {
 		
 	}
 
-	/**
-	 * Test method for {@link application.AbstractGame#saveGameResults()}.
-	 */
-	@Test
-	public void testSaveGameResults() {
-		
-	}
-
-	/**
-	 * Test method for {@link application.AbstractGame#displayAthletsResults()}.
-	 */
-	@Test
-	public void testDisplayAthletsResults() {
-		
-	}
-
 }
