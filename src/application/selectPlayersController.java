@@ -28,17 +28,25 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-
+/**
+<h1> selectPlayersController <h1>
+* selectPlayersController class used to select Athletes
+* @version jdk1.8
+* @author Bohang Lin s3651013
+*/
 public class selectPlayersController implements Initializable{
 
 	@FXML private TableColumn checklist;
 	@FXML private TableView playersTable;
 	public static int sort=1;
+	/**
+	 * initialize
+	 * @param resources ResourceBundle
+	 * @param location location
+	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//checklist.setCellFactory(CheckBoxTableCell.forTableColumn(checklist));
 		ObservableList list=FXCollections.observableArrayList();
-		// TODO Auto-generated method stub
 		ArrayList<Athletes> temparr=null;
 		if(Ozlympic.gameType.equals("swimming"))
 		{
@@ -151,13 +159,13 @@ public class selectPlayersController implements Initializable{
 		    border.getChildren().add(line);
 		    
 		    count++;
-		    //创建时间轴  
+		    //Create a timeline  
 		    final Timeline timeline=new Timeline();
 		    timeline.onFinishedProperty();{
 		    	
 		    }
-		    //timeline.setCycleCount(Timeline.INDEFINITE);//设置周期运行循环往复  
-		    //timeline.setAutoReverse(true);//设置动画的自动往返效果  
+		    //timeline.setCycleCount(Timeline.INDEFINITE);//setup cycle repeats 
+		    //timeline.setAutoReverse(true);//Set the auto-return effect of the animation 
 		    EventHandler onFinished = new EventHandler<ActionEvent>() {
 	            public void handle(ActionEvent ac) {
 	                 //stack.setTranslateX(java.lang.Math.random()*200-100);
@@ -168,12 +176,12 @@ public class selectPlayersController implements Initializable{
 	            }
 	        };
 		      
-		    //将x的位置在500ms内移动到300处  
+		    //Move the x position within 500ms to 300
 		    final KeyValue kv=new KeyValue(t.xProperty(), 430);  
 		    final KeyFrame kf=new KeyFrame(Duration.millis(a.getSeconds()*1000),onFinished, kv);  
-		    //将关键帧加到时间轴中  
+		    //Add key frames to the timeline
 		    timeline.getKeyFrames().add(kf);  
-		    timeline.play();//运行  
+		    timeline.play();//run  
 		    
 	    }
 	    
@@ -206,10 +214,18 @@ public class selectPlayersController implements Initializable{
 		}
 		return null;
 	}
+	/**
+	 * set back button point to "selectGame.fxml"
+	 * @param event ActionEvent
+	 */
 	public void backClick(ActionEvent event)
 	{	
 		Ozlympic.loadPage("selectGame.fxml");		
 	}
+	/**
+	 * set back button point to "myScene.fxml"
+	 * @param event ActionEvent
+	 */
 	public void homeClick(ActionEvent event)
 	{
 		Ozlympic.loadPage("myScene.fxml");		

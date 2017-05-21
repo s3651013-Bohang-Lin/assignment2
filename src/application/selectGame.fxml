@@ -23,5 +23,10 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
+      <Button layoutX="477.0" layoutY="446.0" mnemonicParsing="false" onAction="#backClick" prefHeight="52.0" prefWidth="98.0" text="Back" textFill="#070707">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

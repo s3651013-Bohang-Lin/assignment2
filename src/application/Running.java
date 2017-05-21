@@ -1,7 +1,9 @@
 package application;
 
 /**
- * Running class
+ * <h1>Running</h1>
+ * Running class provides general behavior to generate random seconds of sprinters
+ * @version jdk1.8
  * @author JinMing Liu s3596621
  *
  */

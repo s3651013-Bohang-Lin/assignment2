@@ -14,10 +14,20 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+/**
+<h1> scoreController <h1>
+* scoreController class used to display All game results and scores of Athletes
+* @version jdk1.8
+* @author JinMing Liu s3596621
+*/
 public class scoreController implements Initializable {
 	@FXML
 	private TableView score;
+	/**
+	 * initialize
+	 * @param resources ResourceBundle
+	 * @param location location
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
@@ -46,10 +56,18 @@ public class scoreController implements Initializable {
 		cols.get(4).setCellValueFactory(new PropertyValueFactory("score"));
 		score.setItems(list);
 	}
+	/**
+	 * set back button point to "selectGame.fxml"
+	 * @param event ActionEvent
+	 */
 	public void backClick(ActionEvent event)
 	{		
 		Ozlympic.loadPage("selectGame.fxml");	
 	}
+	/**
+	 * set back button point to "myScene.fxml"
+	 * @param event ActionEvent
+	 */
 	public void homeClick(ActionEvent event)
 	{
 		Ozlympic.loadPage("myScene.fxml");	

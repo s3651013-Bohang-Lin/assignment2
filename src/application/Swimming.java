@@ -1,7 +1,9 @@
 package application;
 
 /**
- * Swimming class
+ * <h1>Swimming</h1>
+ * Swimming class provides general behavior to generate random seconds of swimmers
+ * @version jdk1.8
  * @author JinMing Liu s3596621
  *
  */

@@ -27,13 +27,6 @@ public class AbstractGameTest {
 	private List<Athletes> athletes = new ArrayList<Athletes>();
 	private List<AbstractGame> game = new ArrayList<AbstractGame>();
 	private Map<String, Double> athletsSecondResult = new HashMap<String, Double>();
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-		
-	}
 
 	/**
 	 * Test method for {@link application.AbstractGame#runGame()}.

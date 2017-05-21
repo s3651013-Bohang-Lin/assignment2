@@ -18,7 +18,7 @@ public class OfficialsTest {
 	 */
 	@Test
 	public void testCalScores() {
-		fail("Not yet implemented");
+	
 	}
 
 }

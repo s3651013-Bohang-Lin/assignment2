@@ -30,7 +30,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-
+/**
+<h1> selectController <h1>
+* selectController class used to select referees and game
+* @version jdk1.8
+* @author Bohang Lin s3651013
+*/
 public class selectController implements Initializable{
 		@FXML
 		private TextField texttest;
@@ -95,7 +100,6 @@ public class selectController implements Initializable{
 		/**
 		 * the  methods to get Official By ID
 		 * @param ID String
-		 * @author Bohang Lin s3651013
 		 * @return Officials
 		 */
 		public Officials getOfficialByID(String ID){
@@ -110,13 +114,28 @@ public class selectController implements Initializable{
 			}
 			return null;
 		}
-	
+		/**
+		 * set back button point to "selectGame.fxml"
+		 * @param event ActionEvent
+		 */
+		public void backClick(ActionEvent event)
+		{		
+			Ozlympic.loadPage("myScene.fxml");	
+		}
+		/**
+		 * set back button point to "myScene.fxml"
+		 * @param event ActionEvent
+		 */
 		public void homeClick(ActionEvent event)
 		{
 			Ozlympic.loadPage("myScene.fxml");
 				
 		}
-		
+		/**
+		 * initialize
+		 * @param resources ResourceBundle
+		 * @param location location
+		 */
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			ObservableList list=FXCollections.observableArrayList();

@@ -41,7 +41,7 @@ public class myController  extends Application implements Initializable {
 	{
 		System.exit(0);
 	}
-	@Override //添加图片
+	@Override 
     public void start(Stage primaryStage) {
         StackPane root = new StackPane();
         root.setId("pane");

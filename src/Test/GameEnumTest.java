@@ -18,7 +18,7 @@ public class GameEnumTest {
 	 */
 	@Test
 	public void testGetGameByIndex() {
-		fail("Not yet implemented");
+		
 	}
 
 }
