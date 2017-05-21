@@ -5,3 +5,9 @@ Sup0004 Bee4 20.22 3
 Sup0005 Jack5 10.59 20
 Sup0006 Derick6 11.21 14
 
+R2 running 2017-05-21 18:23:32.662
+Sup0008 Burn8 19.13 4
+Sp0001 Beckr1 19.13 5
+Sp0002 Befck2 10.95 15
+Sp0003 Kayden3 14.54 9
+

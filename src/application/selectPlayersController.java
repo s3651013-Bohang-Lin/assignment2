@@ -207,18 +207,13 @@ public class selectPlayersController implements Initializable{
 			
 		}
 		return null;
-		
 	}
 	public void backClick(ActionEvent event)
-	{
-		
-		Ozlympic.loadPage("selectGame.fxml");
-			
+	{	
+		Ozlympic.loadPage("selectGame.fxml");		
 	}
 	public void homeClick(ActionEvent event)
 	{
-
-		Ozlympic.loadPage("myScene.fxml");
-			
+		Ozlympic.loadPage("myScene.fxml");		
 	}
 }

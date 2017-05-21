@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scoreController">
    <children>
-      <TableView fx:id="score" prefHeight="480.0" prefWidth="486.0">
+      <TableView fx:id="score" prefHeight="543.0" prefWidth="577.0">
         <columns>
           <TableColumn prefWidth="96.0" text="gameID" />
           <TableColumn prefWidth="96.0" text="athleteID" />
@@ -17,10 +17,13 @@
           <TableColumn prefWidth="96.0" text="scores" />
         </columns>
       </TableView>
-      <Button layoutX="92.0" layoutY="479.0" mnemonicParsing="false" onAction="#backClick" prefHeight="37.0" prefWidth="71.0" text="Back" textFill="#070707">
+      <Button layoutX="147.0" layoutY="544.0" mnemonicParsing="false" onAction="#backClick" prefHeight="37.0" prefWidth="71.0" text="Back" textFill="#070707">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button layoutX="321.0" layoutY="479.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="37.0" prefWidth="71.0" text="Home" textFill="#070707" />
+      <Button layoutX="400.0" layoutY="544.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="37.0" prefWidth="71.0" text="Home" textFill="#070707">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

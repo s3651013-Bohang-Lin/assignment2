@@ -8,10 +8,10 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.selectController">
    <children>
-      <Button layoutX="302.0" layoutY="82.0" mnemonicParsing="false" onAction="#swimmingClick" prefHeight="52.0" prefWidth="98.0" text="Swimming" textAlignment="CENTER" textFill="#070707" />
-      <Button layoutX="302.0" layoutY="148.0" mnemonicParsing="false" onAction="#runningClick" prefHeight="52.0" prefWidth="98.0" text="Running" textFill="#070707" />
-      <Button layoutX="302.0" layoutY="215.0" mnemonicParsing="false" onAction="#cyclingClick" prefHeight="52.0" prefWidth="98.0" text="Cycling" textFill="#070707" />
-      <TableView fx:id="officialsTable" prefHeight="400.0" prefWidth="302.0">
+      <Button layoutX="477.0" layoutY="213.0" mnemonicParsing="false" onAction="#swimmingClick" prefHeight="52.0" prefWidth="98.0" text="Swimming" textAlignment="CENTER" textFill="#070707" />
+      <Button layoutX="477.0" layoutY="135.0" mnemonicParsing="false" onAction="#runningClick" prefHeight="52.0" prefWidth="98.0" text="Running" textFill="#070707" />
+      <Button layoutX="477.0" layoutY="292.0" mnemonicParsing="false" onAction="#cyclingClick" prefHeight="52.0" prefWidth="98.0" text="Cycling" textFill="#070707" />
+      <TableView fx:id="officialsTable" prefHeight="561.0" prefWidth="476.0">
         <columns>
           <TableColumn prefWidth="85.0" text="ID" />
           <TableColumn prefWidth="82.0" text="Name" />
@@ -20,7 +20,7 @@
         </columns>
       </TableView>
       <ColorPicker />
-      <Button layoutX="302.0" layoutY="348.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="52.0" prefWidth="98.0" text="Home" textFill="#070707">
+      <Button layoutX="477.0" layoutY="509.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="52.0" prefWidth="98.0" text="Home" textFill="#070707">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
