@@ -56,7 +56,11 @@ public class selectPlayersController implements Initializable{
 		}
 		ObservableList<TableColumn> cols = playersTable.getColumns();
 		cols.get(0).setCellValueFactory(new PropertyValueFactory("checkbox"));
-		cols.get(1).setCellValueFactory(new PropertyValueFactory("name"));
+		cols.get(1).setCellValueFactory(new PropertyValueFactory("uniqueID"));
+		cols.get(2).setCellValueFactory(new PropertyValueFactory("name"));
+		cols.get(3).setCellValueFactory(new PropertyValueFactory("type"));
+		cols.get(4).setCellValueFactory(new PropertyValueFactory("age"));
+		cols.get(5).setCellValueFactory(new PropertyValueFactory("state"));
 		playersTable.setItems(list);
 	}
 	public void StartGame(ActionEvent event)

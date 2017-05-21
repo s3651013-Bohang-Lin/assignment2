@@ -128,7 +128,6 @@ public class selectController implements Initializable{
 			cols.get(1).setCellValueFactory(new PropertyValueFactory("offiName"));
 			cols.get(2).setCellValueFactory(new PropertyValueFactory("offiAge"));
 			cols.get(3).setCellValueFactory(new PropertyValueFactory("offiState"));
-			cols.get(4).setCellValueFactory(new PropertyValueFactory("offiType"));
 			officialsTable.setItems(list);
 			
 		}

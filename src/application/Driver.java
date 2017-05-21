@@ -244,8 +244,27 @@ public class Driver {
 			String[] lines = content.split(";");
 			for (String line : lines) {
 				String[] values = line.split(", ");
-
+				if(values.length<5)
+				{
+					continue;
+				}
 				Athletes ath = new Athletes();
+				if(values[0].trim().equals(""))
+				{
+					continue;
+				}else if(values[1].trim().equals(""))
+				{
+					continue;
+				}else if(values[2].trim().equals(""))
+				{
+					continue;
+				}else if(values[3].trim().equals(""))
+				{
+					continue;
+				}else if(values[4].trim().equals(""))
+				{
+					continue;
+				}
 				ath.setAthID(values[0]);
 				ath.setAthType(values[1]);
 				ath.setAthName(values[2]);
@@ -254,29 +273,67 @@ public class Driver {
 
 				if (!"".equals(ath.getAthType())) {
 					if ("swimmer".equals(ath.getAthType())) {
-						swimmingAths.add(ath);
+						if(!this.checkID(swimmingAths, ath.getAthID()))
+						{
+							swimmingAths.add(ath);
+						}
 					}
 					if ("cyclist".equals(ath.getAthType())) {
-						cyclingAths.add(ath);
+						if(!this.checkID(cyclingAths, ath.getAthID()))
+						{
+							cyclingAths.add(ath);
+						}
 					}
 					if ("sprinter".equals(ath.getAthType())) {
-						runningAths.add(ath);
+						if(!this.checkID(runningAths, ath.getAthID()))
+						{
+							runningAths.add(ath);
+						}
 					}
 					if ("super".equals(ath.getAthType())) {
 						// superAths.add(ath);
+						if(!this.checkID(aths, ath.getAthID()))
+						{
 						swimmingAths.add(ath);
 						cyclingAths.add(ath);
 						runningAths.add(ath);
+						}
 					}
 					if (!"officer".equals(ath.getAthType()))
+					{
+						if(!this.checkID(aths, ath.getAthID()))
+						{
 						aths.add(ath);
+						}
+					}
 				}
 			}
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 	}
-
+	public boolean checkID(ArrayList<Athletes> players,String id)
+	{
+		for(Athletes ath:players)
+		{
+			if(ath.getAthID().equals(id))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean checkOffiID(ArrayList<Officials> players,String id)
+	{
+		for(Officials ath:players)
+		{
+			if(ath.getOffiID().equals(id))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 	/**
 	 * loading referee method used to read all officials' information from
 	 * "participants.txt"
@@ -289,13 +346,32 @@ public class Driver {
 		try {
 			content = FileUtils.readFile("participants.txt");
 			String[] lines = content.split(";");
+			System.out.println(content);
 			for (String line : lines) {
 				String[] values = line.split(", ");
-
+				if(values.length<5)
+				{
+					continue;
+				}
 				if (("officer".equals(values[1]))) {
-					Officials offic = new Officials(values[0], values[2], Integer.parseInt(values[3]), values[4], "");
-
+					if(values[0].trim().equals(""))
+					{
+						continue;
+					}else if(values[2].trim().equals(""))
+					{
+						continue;
+					}else if(values[3].trim().equals(""))
+					{
+						continue;
+					}else if(values[4].trim().equals(""))
+					{
+						continue;
+					}
+					Officials offic = new Officials(values[0].trim(), values[2].trim(), Integer.parseInt(values[3].trim()), values[4].trim(), "");
+					if(!this.checkOffiID(offics, offic.getOffiID()))
+					{
 					offics.add(offic);
+					}
 				}
 			}
 			if (offics.size() == 0) {

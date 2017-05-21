@@ -6,12 +6,16 @@ package Test;
 import static org.junit.Assert.*;//静态引入,调用时不需要写Assert.
 import static org.hamcrest.Matchers.*;
 import java.nio.channels.NonWritableChannelException;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.hamcrest.core.AllOf;
 import org.junit.Before;
 import org.junit.Test;
 
 import application.AbstractGame;
+import application.Athletes;
 import javafx.beans.binding.ListExpression;
 
 /**
@@ -19,29 +23,30 @@ import javafx.beans.binding.ListExpression;
  *
  */
 public class AbstractGameTest {
-
+	
+	private List<Athletes> athletes = new ArrayList<Athletes>();
+	private List<AbstractGame> game = new ArrayList<AbstractGame>();
+	private Map<String, Double> athletsSecondResult = new HashMap<String, Double>();
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-	}
-
-	/**
-	 * Test method for {@link application.AbstractGame#AbstractGame(java.lang.String, java.lang.String)}.
-	 */
-	@Test
-	public void testAbstractGame() {
-		fail("Not yet implemented");
+		
 	}
 
 	/**
 	 * Test method for {@link application.AbstractGame#runGame()}.
 	 */
-	@Test(expected = new AbstractGame().TooFewAthleteException.)
+	@Test()
 	public void testRunGame() {
-		AbstractGame game = null;
-		assertThat(game.getAthlets().size(),lessThan(4));
+		for(Athletes athlete : athletes){
+			double seconds = 1.11;
+			athlete.setSeconds(seconds);
+			athletsSecondResult.put("Sw0001", seconds);
+			assertEquals("Sw0001", 1.11,athletsSecondResult );
+		}
+		
 	}
 
 	/**
@@ -49,7 +54,7 @@ public class AbstractGameTest {
 	 */
 	@Test
 	public void testSaveGameResults() {
-		fail("Not yet implemented");
+		
 	}
 
 	/**
@@ -57,7 +62,7 @@ public class AbstractGameTest {
 	 */
 	@Test
 	public void testDisplayAthletsResults() {
-		fail("Not yet implemented");
+		
 	}
 
 }

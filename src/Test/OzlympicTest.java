@@ -5,7 +5,15 @@ package Test;
 
 import static org.junit.Assert.*;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import org.junit.Test;
+
+import application.Ozlympic;
 
 /**
  * @author 10623
@@ -17,8 +25,8 @@ public class OzlympicTest {
 	 * Test method for {@link application.Ozlympic#start(javafx.stage.Stage)}.
 	 */
 	@Test
-	public void testStartStage() {
-		fail("Not yet implemented");
+	public void testgetCountOfGameType() {
+		
 	}
 
 	/**
