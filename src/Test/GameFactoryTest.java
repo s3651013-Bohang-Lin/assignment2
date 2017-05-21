@@ -14,7 +14,7 @@ import application.Running;
 import application.Swimming;
 
 /**
- * @author 10623
+ * @author JinMing Liu s3596621
  *
  */
 public class GameFactoryTest {

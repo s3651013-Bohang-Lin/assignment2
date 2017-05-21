@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
-<h1> Officials <h1>
+<h1> Officials </h1>
 * Officials class is used to calculate the athletes' scores
 * @version jdk1.8
 * @author JinMing Liu s3596621
@@ -70,9 +70,7 @@ public class Officials extends Participants {
 	/**
 	 * This is the method of score.The first Athletes add 5 points,The second
 	 * Athletes add 2 points,The third Athletes add 1 points
-	 * 
 	 * @param game AbstractGame
-	 * @return calScores
 	 */
 	public void calScores(AbstractGame game) {
 		List<Athletes> athletes = game.getAthlets();

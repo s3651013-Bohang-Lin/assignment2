@@ -1,6 +1,6 @@
 package application;
 /**
-<h1> resultsBean <h1>
+<h1> resultsBean </h1>
 * resultsBean class inherit Athletes class and add two attributes: game ID and official ID
 * to provide for scoreController class
 * @version jdk1.8

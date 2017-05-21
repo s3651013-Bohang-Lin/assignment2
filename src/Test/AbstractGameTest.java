@@ -3,7 +3,7 @@
  */
 package Test;
 
-import static org.junit.Assert.*;//静态引入,调用时不需要写Assert.
+import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 import java.nio.channels.NonWritableChannelException;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import application.Athletes;
 import javafx.beans.binding.ListExpression;
 
 /**
- * @author 10623
+ * @author JinMing Liu s3596621
  *
  */
 public class AbstractGameTest {

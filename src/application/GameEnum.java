@@ -60,6 +60,7 @@ public enum GameEnum {
 	}
 	/**
 	 * Game type enumeration
+	 * @param index int
 	 * @return GameEnum
 	 */
 	public static GameEnum getGameByIndex(int index)

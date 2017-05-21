@@ -31,7 +31,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
-<h1> selectController <h1>
+<h1> selectController </h1>
 * selectController class used to select referees and game
 * @version jdk1.8
 * @author Bohang Lin s3651013
@@ -47,7 +47,10 @@ public class selectController implements Initializable{
 		private Stage primaryStage;
 		@FXML
 		private TableView officialsTable;
-		
+		/**
+		 * set swimming button select swimming to run the game
+		 * @param event ActionEvent
+		 */
 		public void swimmingClick(ActionEvent event)
 		{
 			String selOffic="";
@@ -63,7 +66,10 @@ public class selectController implements Initializable{
 				Ozlympic.alert("Warning", "please chose one referee");
 			}	
 		}
-		
+		/**
+		 * set running button select running to run the game
+		 * @param event ActionEvent
+		 */
 		public void runningClick(ActionEvent event)
 		{
 			Boolean ok = true;
@@ -80,7 +86,10 @@ public class selectController implements Initializable{
 				Ozlympic.alert("Warning", "please chose one referee");
 			}	
 		}
-		
+		/**
+		 * set cycling button select cycling to run the game
+		 * @param event ActionEvent
+		 */
 		public void cyclingClick(ActionEvent event)
 		{
 			Boolean ok = true;
@@ -133,8 +142,6 @@ public class selectController implements Initializable{
 		}
 		/**
 		 * initialize
-		 * @param resources ResourceBundle
-		 * @param location location
 		 */
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {

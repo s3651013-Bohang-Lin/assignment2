@@ -29,14 +29,6 @@ import javafx.scene.layout.BorderPane;
  *
  */
 public class Ozlympic extends Application {
-	/**
-	 * @param mainStage Stage
-	 * @param driver Driver
-	 * @param connection Connection
-	 * @param statement Statement
-	 * @param offID String
-	 * @param gameType String
-	 * */
 	public static Stage mainStage;
 	public static Driver driver;
 	public static Connection connection = null; 
@@ -47,9 +39,6 @@ public class Ozlympic extends Application {
 	/**
 	 *start method used to create and connect a database to store information of Athletes and officials
 	 *@param primaryStage Stage
-	 *@throws SQLException An exception that provides information on a database access error or other errors.
-	 *@throws ClassNotFoundException Thrown when an application tries to load in a class through its string name using: 
-	 *@throws NoRefereeException when trying run a game which has no official appointed.
 	 */
 	@Override
 	public void start(Stage primaryStage) {
@@ -99,9 +88,6 @@ public class Ozlympic extends Application {
 	/**
 	 *load method used to create a new page of GUI
 	 *@param filename String
-	 *@throws Exception The class Exception and its subclasses are a form of Throwable that indicates 
-	 *conditions that a reasonable application might want to catch. 
-	 *@throws SQLException An exception that provides information on a database access error or other errors.
 	 */
 	public static void loadPage(String filename)
 	{
@@ -131,7 +117,6 @@ public class Ozlympic extends Application {
 	/**
 	 *insertResult method used to insert data in database
 	 *@param sql String
-	 *@throws SQLException An exception that provides information on a database access error or other errors.
 	 */
 	public static void insertResult(String sql)
 	{
@@ -150,8 +135,8 @@ public class Ozlympic extends Application {
 	}
 	/**
 	 *getCountOfGameType method used to create game ID
-	 *@param gametype int 
-	 *@throws SQLException An exception that provides information on a database access error or other errors.
+	 *@param gametype int
+	 *@return int
 	 */
 	public static int getCountOfGameType(int gametype)
 	{

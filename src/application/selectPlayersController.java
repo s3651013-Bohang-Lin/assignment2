@@ -29,7 +29,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 /**
-<h1> selectPlayersController <h1>
+<h1> selectPlayersController </h1>
 * selectPlayersController class used to select Athletes
 * @version jdk1.8
 * @author Bohang Lin s3651013
@@ -41,8 +41,6 @@ public class selectPlayersController implements Initializable{
 	public static int sort=1;
 	/**
 	 * initialize
-	 * @param resources ResourceBundle
-	 * @param location location
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -71,6 +69,11 @@ public class selectPlayersController implements Initializable{
 		cols.get(5).setCellValueFactory(new PropertyValueFactory("state"));
 		playersTable.setItems(list);
 	}
+	
+	/**
+	 * start game
+	 * @param event ActionEvent
+	 */
 	public void StartGame(ActionEvent event)
 	{
 		ArrayList<Athletes> ath = new ArrayList<Athletes>();
@@ -122,6 +125,10 @@ public class selectPlayersController implements Initializable{
 		}
 			
 	}
+	/**
+	 * show game
+	 * @param game AbstractGame
+	 */
 	public void showGame(AbstractGame game)
 	{
 		

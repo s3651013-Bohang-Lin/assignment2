@@ -11,7 +11,7 @@ import application.Driver;
 import application.NoRefereeException;
 
 /**
- * @author 10623
+ * @author JinMing Liu s3596621
  *
  */
 public class DriverTest {

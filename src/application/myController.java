@@ -27,16 +27,26 @@ public class myController  extends Application implements Initializable {
 	private TextField texttest;
 	@FXML
 	private Button btntest;
+	/**
+	 * set back button point to "selectGame.fxml"
+	 * @param event ActionEvent
+	 */
 	public void selectClick(ActionEvent event)
 	{
 		Ozlympic.loadPage("selectGame.fxml");
 	}
-
+	/**
+	 * set back button point to "scoreScene.fxml"
+	 * @param event ActionEvent
+	 */
 	public void resultsClick(ActionEvent event)
 	{
 		Ozlympic.loadPage("scoreScene.fxml");
 	}
-
+	/**
+	 * set back button point to exit
+	 * @param event ActionEvent
+	 */
 	public void exitClick(ActionEvent event)
 	{
 		System.exit(0);

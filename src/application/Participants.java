@@ -1,7 +1,7 @@
 package application;
 
 /**
- * </h1>Participant</h1> 
+ * <h1>Participant</h1> 
  * Participant class is a superclass about athletes class and officials class
  * @version jdk1.8
  * @author JinMing Liu s3596621

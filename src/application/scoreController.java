@@ -15,7 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 /**
-<h1> scoreController <h1>
+<h1> scoreController </h1>
 * scoreController class used to display All game results and scores of Athletes
 * @version jdk1.8
 * @author JinMing Liu s3596621
@@ -25,8 +25,6 @@ public class scoreController implements Initializable {
 	private TableView score;
 	/**
 	 * initialize
-	 * @param resources ResourceBundle
-	 * @param location location
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

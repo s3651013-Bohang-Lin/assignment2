@@ -16,7 +16,7 @@ import org.junit.Test;
 import application.Ozlympic;
 
 /**
- * @author 10623
+ * @author JinMing Liu s3596621
  *
  */
 public class OzlympicTest {

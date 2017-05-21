@@ -16,7 +16,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
-<h1> resultsController <h1>
+<h1> resultsController </h1>
 * resultsController class used to display All game results and scores of Athletes
 * @version jdk1.8
 * @author JinMing Liu s3596621
@@ -31,8 +31,6 @@ public class resultsController implements Initializable {
 	@Override
 	/**
 	 * this method display the results and scores of Athletes on the text area
-	 * @param resources ResourceBundle
-	 * @param location location
 	 */
 	public void initialize(URL location, ResourceBundle resources) {
 		

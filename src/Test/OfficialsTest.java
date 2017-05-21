@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
- * @author 10623
+ * @author JinMing Liu s3596621
  *
  */
 public class OfficialsTest {
