@@ -37,7 +37,7 @@ public class myController implements Initializable{
 
 	public void exitClick(ActionEvent event)
 	{
-		
+		System.exit(0);
 	}
 
 	@Override
